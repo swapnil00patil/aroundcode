@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Around Code`,
+    author: `Swapnil Patil`,
+    description: `I work as a Senior Software Engineer in Singapore. 11 years of Experience in Enterprise Web and Hybrid Mobile Applications. I am a techie and I love making cool products.
+    `,
+    siteUrl: `http://aroundcode.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `swapnil00patil`,
     },
   },
   plugins: [
@@ -71,6 +72,12 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "aroundcode.io",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
