@@ -27,6 +27,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.title}
           </h1>
+          {post.frontmatter.tags.map((tag) => tag)}
+          {post.frontmatter.author}
           <p
             style={{
               ...scale(-1 / 5),
@@ -95,6 +97,8 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        tags
+        author
       }
     }
   }

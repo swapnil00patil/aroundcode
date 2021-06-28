@@ -9,7 +9,7 @@ import { rhythm } from "../utils/typography"
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
-
+  console.log(data)
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
@@ -37,6 +37,8 @@ const BlogIndex = ({ data, location }) => {
                 }}
               />
             </section>
+            {node.frontmatter.tags.map((tag) => tag)}
+            {node.frontmatter.author}
           </article>
         )
       })}
@@ -64,6 +66,8 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            tags
+            author
           }
         }
       }
