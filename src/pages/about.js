@@ -18,6 +18,8 @@ const Container = styled.div`
 `
 const BioWrap = styled.div`
   margin: 20px;
+  width: 50%;
+  flex-shrink: 1;
 `
 
 const AboutPage = ({

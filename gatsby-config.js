@@ -1,12 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `AroundCode`,
+    siteUrl: `http://aroundcode.io/`,
     authors: {
       swapnil: {
         author: `Swapnil Patil`,
-        description: `I work as a Senior Software Engineer in Singapore. 11 years of Experience in Enterprise Web and Hybrid Mobile Applications. I am a techie and I love making cool products.
-        `,
-        siteUrl: `http://aroundcode.io/`,
+        description: `I work as a Software Engineer in Singapore. 12 years of Experience in Enterprise Web and Hybrid Mobile Applications. I am a techie and I love making cool products.`,
         social: {
           linkedin: `https://www.linkedin.com/in/swapnil00patil/`,
           github: `https://github.com/swapnil00patil`,
@@ -15,12 +14,10 @@ module.exports = {
       },
       kiran: {
         author: `Kiran Aghor`,
-        description: `I work as a Senior Software Engineer in Singapore. 11 years of Experience in Enterprise Web and Hybrid Mobile Applications. I am a techie and I love making cool products.
-        `,
-        siteUrl: `http://aroundcode.io/`,
+        description: ``,
         social: {
           linkedin: `https://www.linkedin.com/in/kiranaghor/`,
-          github: `https://github.com/kiranaghor`,
+          github: `https://github.com/kiran-aghor`,
         }
       }
     }
@@ -95,6 +92,8 @@ module.exports = {
       resolve: `gatsby-plugin-s3`,
       options: {
         bucketName: "aroundcode.io",
+        protocol: "https",
+        hostname: "www.aroundcode.io",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

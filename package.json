@@ -62,7 +62,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "npm run build && gatsby-plugin-s3 deploy",
+    "deploy": "npm run clean && npm run build && gatsby-plugin-s3 deploy",
     "clean-install": "rm -rf node_modules && SHARP_IGNORE_GLOBAL_LIBVIPS=true yarn"
   }
 }

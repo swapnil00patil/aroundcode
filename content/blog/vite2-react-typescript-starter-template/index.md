@@ -66,7 +66,7 @@ This will launch an interactive tool that will ask you few questions. Following 
 
 ![output](./output.png)
 
-<iframe frameborder="0" src="http://localhost:8000/video" width="600" height="320"></iframe>
+<iframe frameborder="0" src="http://localhost:8000/video/bst.mp4" width="400" height="320"></iframe>
 
 ### ESLint rules configuration
 

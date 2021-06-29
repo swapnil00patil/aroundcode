@@ -46,7 +46,6 @@ const Bio = ({ authorKey }) => {
             swapnil {
               author
               description
-              siteUrl
               social {
                 linkedin
                 github
@@ -56,7 +55,6 @@ const Bio = ({ authorKey }) => {
             kiran {
               author
               description
-              siteUrl
               social {
                 linkedin
                 github
