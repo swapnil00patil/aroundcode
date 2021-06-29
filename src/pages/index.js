@@ -1,45 +1,61 @@
 import React from "react"
+import styled from "styled-components"
 import { Link, graphql } from "gatsby"
+import kebabCase from "lodash/kebabCase"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
+const Tag = styled(Link)`
+  margin-right: 20px;
+  background: #007acc;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 5px;
+`
+const TagArea = styled.div`
+  display: flex;
+`
+const Article = styled.article`
+  border-bottom: 1px dashed #ccc;
+  padding: ${rhythm(1)} 0;
+  margin: 0;
+`
+
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
-  console.log(data)
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      <Bio />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug}>
+          <Article key={node.fields.slug}>
             <header>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
+              <h3 style={{margin: 0}}>
                 <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
                   {title}
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
+              <small style={{marginLeft: '10px'}}>{node.frontmatter.author}</small>
             </header>
-            <section>
+            <section style={{margin: '10px 0'}}>
               <p
+                style={{ margin: 0 }}
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}
               />
             </section>
-            {node.frontmatter.tags.map((tag) => tag)}
-            {node.frontmatter.author}
-          </article>
+            <TagArea>
+              { node.frontmatter.tags.map((tag) => <Tag to={`/tags/${kebabCase(tag)}/`}>{tag}</Tag>) }
+            </TagArea>
+            
+            
+          </Article>
         )
       })}
     </Layout>

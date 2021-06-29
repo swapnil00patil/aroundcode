@@ -3,6 +3,9 @@ import PropTypes from "prop-types"
 
 // Components
 import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import { MainTitle } from "../components/commonStyled"
 
 const Author = ({ pageContext, data }) => {
   const { author } = pageContext
@@ -10,10 +13,11 @@ const Author = ({ pageContext, data }) => {
   const authorHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } written by "${author}"`
-console.log(pageContext, data)
+  
   return (
-    <div>
-      <h1>{authorHeader}</h1>
+    <Layout>
+      <MainTitle>{authorHeader}</MainTitle>
+      <SEO title={authorHeader} />
       <ul>
         {edges.map(({ node }) => {
           const { slug } = node.fields
@@ -30,7 +34,7 @@ console.log(pageContext, data)
               You'll come back to it!
             */}
       <Link to="/authors">All Authors</Link>
-    </div>
+    </Layout>
   )
 }
 

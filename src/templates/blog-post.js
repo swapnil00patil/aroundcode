@@ -5,12 +5,12 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import { MainTitle } from "../components/commonStyled"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata.title
   const { previous, next } = pageContext
-
   return (
     <Layout location={location} title={siteTitle}>
       <SEO
@@ -19,25 +19,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <article>
         <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
+          <MainTitle>
             {post.frontmatter.title}
-          </h1>
-          {post.frontmatter.tags.map((tag) => tag)}
-          {post.frontmatter.author}
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
+          </MainTitle>
+          <small>{post.frontmatter.date}</small>
+          <small style={{marginLeft: '10px'}}>{post.frontmatter.author}</small>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
@@ -46,7 +32,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           }}
         />
         <footer>
-          <Bio />
+          <Bio authorKey={post.frontmatter.author.split(' ')[0].toLowerCase()} />
         </footer>
       </article>
 

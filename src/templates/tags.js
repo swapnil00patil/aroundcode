@@ -1,6 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import { MainTitle } from "../components/commonStyled"
+
 // Components
 import { Link, graphql } from "gatsby"
 
@@ -12,8 +16,8 @@ const Tags = ({ pageContext, data }) => {
   } tagged with "${tag}"`
 
   return (
-    <div>
-      <h1>{tagHeader}</h1>
+    <Layout>
+      <MainTitle>{tagHeader}</MainTitle>
       <ul>
         {edges.map(({ node }) => {
           const { slug } = node.fields
@@ -30,7 +34,7 @@ const Tags = ({ pageContext, data }) => {
               You'll come back to it!
             */}
       <Link to="/tags">All tags</Link>
-    </div>
+    </Layout>
   )
 }
 

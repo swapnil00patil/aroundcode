@@ -1,67 +1,102 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import styled from "styled-components"
 
-import { rhythm } from "../utils/typography"
+import swapnil from "../../content/assets/swapnil.png"
+import kiran from "../../content/assets/kiran.png"
+import linkedin from "../../content/assets/linkedin.png"
+import github from "../../content/assets/github.png"
+import website from "../../content/assets/website.png"
+import kebabCase from "lodash/kebabCase"
 
-const Bio = () => {
+const ProfilePic = styled.img`
+  border-radius: 20px;
+  width: 100px;
+  margin-right: 20px;
+  align-self: center;
+  margin-bottom: auto;
+`
+const Container = styled.div`
+  display: flex;    
+`
+const Right = styled.div`
+    
+`
+const Name = styled(Link)`
+    
+`
+const SocialLink = styled.a`
+  text-decoration: none;
+  box-shadow: none;
+  margin-right: 20px;
+`
+const Description = styled.p`
+  margin-bottom: 15px;
+`
+const SocialIcon = styled.img`
+  width: 35px;
+`
+
+const Bio = ({ authorKey }) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.png/" }) {
-        childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
       site {
         siteMetadata {
-          author
-          social {
-            twitter
+          authors {
+            swapnil {
+              author
+              description
+              siteUrl
+              social {
+                linkedin
+                github
+                website
+              }
+            }
+            kiran {
+              author
+              description
+              siteUrl
+              social {
+                linkedin
+                github
+              }
+            }
           }
         }
       }
     }
   `)
-
-  const { author, social } = data.site.siteMetadata
+  const { author, description, social } = data.site.siteMetadata.authors[authorKey]
+  console.log(author, data.site.siteMetadata.authors[authorKey])
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
-    >
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author}
-        style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
-        }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
+    <Container>
+      <ProfilePic
+        src={authorKey === 'swapnil' ? swapnil : kiran}
       />
-      <p>
-        Written by <strong>{author}</strong> who lives and works in Singapore
-        building useful things.
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
-    </div>
+      <Right>
+        <Name to={`/author/${kebabCase(author)}/`}>{author}</Name>
+        <Description>{description}</Description>
+        { 
+          social?.linkedin && 
+          <SocialLink target="_blank" href={social.linkedin}>
+            <SocialIcon src={linkedin} />
+          </SocialLink> 
+        }
+        { 
+          social?.github && 
+          <SocialLink target="_blank" href={social.github}>
+            <SocialIcon src={github} />
+          </SocialLink> 
+        }
+        { 
+          social?.website && 
+          <SocialLink target="_blank" href={social.website}>
+            <SocialIcon src={website} />
+          </SocialLink> 
+        }
+      </Right>
+    </Container>
   )
 }
 

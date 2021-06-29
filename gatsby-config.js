@@ -1,15 +1,32 @@
 module.exports = {
   siteMetadata: {
-    title: `Around Code`,
-    author: `Swapnil Patil`,
-    description: `I work as a Senior Software Engineer in Singapore. 11 years of Experience in Enterprise Web and Hybrid Mobile Applications. I am a techie and I love making cool products.
-    `,
-    siteUrl: `http://aroundcode.io/`,
-    social: {
-      twitter: `swapnil00patil`,
-    },
+    title: `AroundCode`,
+    authors: {
+      swapnil: {
+        author: `Swapnil Patil`,
+        description: `I work as a Senior Software Engineer in Singapore. 11 years of Experience in Enterprise Web and Hybrid Mobile Applications. I am a techie and I love making cool products.
+        `,
+        siteUrl: `http://aroundcode.io/`,
+        social: {
+          linkedin: `https://www.linkedin.com/in/swapnil00patil/`,
+          github: `https://github.com/swapnil00patil`,
+          website: `https://swapnilpatil.dev`,
+        }
+      },
+      kiran: {
+        author: `Kiran Aghor`,
+        description: `I work as a Senior Software Engineer in Singapore. 11 years of Experience in Enterprise Web and Hybrid Mobile Applications. I am a techie and I love making cool products.
+        `,
+        siteUrl: `http://aroundcode.io/`,
+        social: {
+          linkedin: `https://www.linkedin.com/in/kiranaghor/`,
+          github: `https://github.com/kiranaghor`,
+        }
+      }
+    }
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -58,7 +75,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
+        name: `AroundCode`,
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#ffffff`,

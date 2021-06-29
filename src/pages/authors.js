@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+import styled from "styled-components"
 
 // Utilities
 import kebabCase from "lodash/kebabCase"
@@ -7,6 +8,16 @@ import kebabCase from "lodash/kebabCase"
 // Components
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import { MainTitle } from "../components/commonStyled"
+
+const AuthorLink = styled(Link)`
+  
+`
+const List = styled.ul`
+  list-style: none;
+`
 
 const AuthorsPage = ({
   data: {
@@ -16,21 +27,22 @@ const AuthorsPage = ({
     },
   },
 }) => (
-  <div>
+  <Layout>
+    <SEO title="All authors" />
     <Helmet title={title} />
     <div>
-      <h1>Authors</h1>
-      <ul>
+      <MainTitle>Authors</MainTitle>
+      <List>
         {group.map(author => (
           <li key={author.fieldValue}>
-            <Link to={`/author/${kebabCase(author.fieldValue)}/`}>
+            <AuthorLink to={`/author/${kebabCase(author.fieldValue)}/`}>
               {author.fieldValue} ({author.totalCount})
-            </Link>
+            </AuthorLink>
           </li>
         ))}
-      </ul>
+      </List>
     </div>
-  </div>
+  </Layout>
 )
 
 AuthorsPage.propTypes = {
