@@ -39,7 +39,7 @@ Insertion, Deletion, Search, Sort; these operations takes O(h) where h is height
 
 ![Unbalanced Binary Search Tree](./unbalanced.png)
 
-Hence, balancing BST is very important. Below are some of flavours of BST to achieve balancing of tree. ([https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree](https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree))
+Hence, balancing BST is very important. Below are some of flavours of BST to achieve balancing of tree. (<a href="https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree" target="_blank">/wiki/Self-balancing_binary_search_tree</a>)
 
 1. AVL Tree
 
@@ -53,7 +53,7 @@ Hence, balancing BST is very important. Below are some of flavours of BST to ach
 
 Remember the rule - *Value of left children is less than root and value of right children is greater than root at any level*
 
-(Images and videos are created using - [https://visualgo.net/](https://visualgo.net/)) 
+(Images and videos are created using - <a href="https://visualgo.net/" target="_blank">visualgo.net</a>
 
 I am going to explain algorithm pictorially. I hope code and comments are self explanatory.
 
@@ -87,4 +87,5 @@ I am going to explain algorithm pictorially. I hope code and comments are self e
 
     ![Tree Traversal](./traversal.png)
 
+## Full Code <a href="https://github.com/swapnil00patil/js-algo/blob/master/binary-search-tree/bst.js" target="_blank">Github</a> or Try Below
 <iframe frameborder="0" width="100%" height="800px" src="https://replit.com/@swapnil00patil/BinarySearchTree?lite=true"></iframe>
