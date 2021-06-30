@@ -22,6 +22,10 @@ const Article = styled.article`
   padding: ${rhythm(1)} 0;
   margin: 0;
 `
+const Author = styled(Link)`
+  margin-left: 10px;
+`
+
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -40,7 +44,9 @@ const BlogIndex = ({ data, location }) => {
                 </Link>
               </h3>
               <small>{node.frontmatter.date}</small>
-              <small style={{marginLeft: '10px'}}>{node.frontmatter.author}</small>
+              <Author to={`/author/${kebabCase(node.frontmatter.author)}/`}>
+                {node.frontmatter.author}
+              </Author>
             </header>
             <section style={{margin: '10px 0'}}>
               <p

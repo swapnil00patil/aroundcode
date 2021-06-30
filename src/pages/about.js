@@ -2,24 +2,26 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-// Utilities
-import kebabCase from "lodash/kebabCase"
-
-// Components
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Bio from "../components/bio"
+import { rhythm } from "../utils/typography"
 
 const Container = styled.div`
   display: flex;
-  margin: 60px 0;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 const BioWrap = styled.div`
-  margin: 20px;
-  width: 50%;
-  flex-shrink: 1;
+  margin: 36px 24px 0 0;
+  width: calc(50% - 24px);
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 24px 0 0 0;
+  }
 `
 
 const AboutPage = ({
