@@ -16,7 +16,6 @@
     "gatsby-plugin-manifest": "^2.2.39",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-react-helmet": "^3.1.21",
-    "gatsby-plugin-s3": "^0.3.2",
     "gatsby-plugin-sharp": "^2.14.4",
     "gatsby-plugin-styled-components": "^4.8.0",
     "gatsby-plugin-typography": "^2.3.21",
@@ -62,7 +61,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "npm run clean && npm run build && gatsby-plugin-s3 deploy",
     "clean-install": "rm -rf node_modules && SHARP_IGNORE_GLOBAL_LIBVIPS=true yarn"
   }
 }
