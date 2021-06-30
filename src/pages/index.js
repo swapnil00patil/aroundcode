@@ -24,6 +24,7 @@ const Article = styled.article`
 `
 const Author = styled(Link)`
   margin-left: 10px;
+  font-size: 80%;
 `
 
 
