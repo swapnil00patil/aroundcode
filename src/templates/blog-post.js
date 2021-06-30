@@ -1,11 +1,17 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from "styled-components"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import { MainTitle } from "../components/commonStyled"
+import kebabCase from "lodash/kebabCase"
+
+export const Section = styled.section`
+  margin: 1rem 0 1rem 0;
+`
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -23,9 +29,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {post.frontmatter.title}
           </MainTitle>
           <small>{post.frontmatter.date}</small>
-          <small style={{marginLeft: '10px'}}>{post.frontmatter.author}</small>
+          <small style={{marginLeft: '10px'}}>
+            <Link to={`/author/${kebabCase(post.frontmatter.author)}/`}>{post.frontmatter.author}</Link>
+          </small>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Section dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr
           style={{
             marginBottom: rhythm(1),

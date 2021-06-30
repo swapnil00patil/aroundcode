@@ -1,10 +1,11 @@
 import React from "react"
-import DogVideo from "../../static/bst.mp4"
 
 export default function Home() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const file = urlParams.get('file');
   return (
     <video controls style={{width: '100%', height: 'auto'}}>
-      <source src={DogVideo} type="video/mp4" />
+      <source src={`/${file}`} type="video/mp4" />
     </video>
   );
 }

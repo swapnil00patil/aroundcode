@@ -1,17 +1,10 @@
 ---
-title: Creating your own Vite 2, React, Typescript starter template
+title: Getting started with Vite 2 and React
 tags: ["react", "typescript", "Vite 2"]
 author: "Kiran Aghor"
-date: "2021-05-01T22:12:03.284Z"
+date: "2021-04-12T00:00:00.111Z"
+description: ""
 ---
-
-## Getting started with Vite 2 and React
-
-Title options
-
-Creating your own Vite 2, React, Typescript starter template.
-
-Beginner guide to using Vite 2 in your React + typescript application.
 
 Vite is a next generation build tool that is blazingly fast for development and aides in bundling for production for legacy browsers. Its opinionated and brings a pleasant developer experience with sensible defaults and optionally via additional configuration and plugins. In this article we will create our own starter template for React application. Our production ready React application will require:
 
@@ -65,8 +58,6 @@ npm eslint --init
 This will launch an interactive tool that will ask you few questions. Following screenshot depicts the answers for each question in blue. Based on this information additional packages will be installed. It will also add a .eslintrc file in the root of our application directory.
 
 ![output](./output.png)
-
-<iframe frameborder="0" src="http://localhost:8000/video/bst.mp4" width="400" height="320"></iframe>
 
 ### ESLint rules configuration
 
