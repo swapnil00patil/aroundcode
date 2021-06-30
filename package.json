@@ -1,14 +1,10 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "AroundCode",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Blog by Swapnil and Kiran about their technical Journey",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
   "dependencies": {
-    "babel-plugin-styled-components": "^1.12.0",
+    "babel-plugin-styled-components": "^1.13.1",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-feed": "^2.3.26",
@@ -45,7 +41,7 @@
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
-    "gatsby"
+    "aroundCode"
   ],
   "license": "MIT",
   "main": "n/a",
@@ -61,6 +57,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "clean-install": "rm -rf node_modules && SHARP_IGNORE_GLOBAL_LIBVIPS=true yarn"
+    "clean-install": "rm -rf node_modules && SHARP_IGNORE_GLOBAL_LIBVIPS=true npm i"
   }
 }
