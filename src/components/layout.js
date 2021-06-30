@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { rhythm } from "../utils/typography"
-import Header from "./Header"
+import Header from "./header"
 import "./layout.css"
 
 const Container = styled.div`
