@@ -25,7 +25,7 @@ const ContentWidth = styled.div`
   padding: 0 ${rhythm(3 / 4)};
 `
 const Footer = styled(ContentWidth)`
-  padding: 20px 0;
+  padding: 20px;
 `
 const MainArea = styled(ContentWidth)`
   min-height: calc(100vh - 155px);
