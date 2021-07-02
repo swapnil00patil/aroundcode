@@ -1,8 +1,8 @@
 ---
 title: Getting started with Vite 2 and React
-tags: ["react", "typescript", "Vite 2"]
+tags: ["react", "typescript", "vite 2"]
 author: "Kiran Aghor"
-date: "2021-04-12T00:00:00.111Z"
+date: "2021-05-12T00:00:00.111Z"
 description: ""
 ---
 
