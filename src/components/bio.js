@@ -28,13 +28,36 @@ const Name = styled(Link)`
 const SocialLink = styled.a`
   text-decoration: none;
   box-shadow: none;
-  margin-right: 20px;
+  margin-left: 15px;
+`
+const SocialText = styled.a`
+  text-decoration: none;
+  box-shadow: none; 
+  border-radius: 5px;
+  border: 1px solid rgb(0, 122, 204);
+  padding: 0 8px;
+  margin-right: 10px;
+  font-size: 14px;
 `
 const Description = styled.p`
   margin-bottom: 15px;
 `
 const SocialIcon = styled.img`
-  width: 35px;
+  width: 25px;
+  margin: 0;
+  align-items: center;
+  display: flex;
+`
+const LinkArea = styled.div`
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+`
+const NameSection = styled.div`
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
 `
 
 const Bio = ({ authorKey }) => {
@@ -50,6 +73,7 @@ const Bio = ({ authorKey }) => {
                 linkedin
                 github
                 website
+                resume
               }
             }
             kiran {
@@ -66,33 +90,42 @@ const Bio = ({ authorKey }) => {
     }
   `)
   const { author, description, social } = data.site.siteMetadata.authors[authorKey]
-  console.log(author, data.site.siteMetadata.authors[authorKey])
   return (
     <Container>
       <ProfilePic
         src={authorKey === 'swapnil' ? swapnil : kiran}
       />
       <Right>
-        <Name to={`/author/${kebabCase(author)}/`}>{author}</Name>
+        <NameSection>
+          <Name to={`/author/${kebabCase(author)}/`}>{author}</Name>
+          { 
+              social?.linkedin && 
+              <SocialLink target="_blank" href={social.linkedin}>
+                <SocialIcon src={linkedin} />
+              </SocialLink> 
+            }
+            { 
+              social?.github && 
+              <SocialLink target="_blank" href={social.github}>
+                <SocialIcon src={github} />
+              </SocialLink> 
+            }
+        </NameSection>
         <Description>{description}</Description>
-        { 
-          social?.linkedin && 
-          <SocialLink target="_blank" href={social.linkedin}>
-            <SocialIcon src={linkedin} />
-          </SocialLink> 
-        }
-        { 
-          social?.github && 
-          <SocialLink target="_blank" href={social.github}>
-            <SocialIcon src={github} />
-          </SocialLink> 
-        }
-        { 
-          social?.website && 
-          <SocialLink target="_blank" href={social.website}>
-            <SocialIcon src={website} />
-          </SocialLink> 
-        }
+        <LinkArea>
+          { 
+            social?.website && 
+            <SocialText target="_blank" href={social.website}>
+              Website
+            </SocialText> 
+          }
+          { 
+            social?.resume && 
+            <SocialText target="_blank" href={social.resume}>
+              Resume
+            </SocialText> 
+          }
+        </LinkArea>
       </Right>
     </Container>
   )

@@ -11,6 +11,7 @@ module.exports = {
           linkedin: `https://www.linkedin.com/in/swapnil00patil/`,
           github: `https://github.com/swapnil00patil`,
           website: `https://swapnilpatil.dev`,
+          resume: `https://swapnilpatil.dev/resume.pdf`
         }
       },
       kiran: {
