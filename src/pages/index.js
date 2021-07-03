@@ -9,7 +9,7 @@ import { rhythm } from "../utils/typography"
 
 const Tag = styled(Link)`
   font-size: 14px;
-  margin-right: 20px;
+  margin: 10px 10px 0 0;
   padding: 0 8px;
   border-radius: 5px;
   border: 1px solid rgb(0, 122, 204);
@@ -17,6 +17,7 @@ const Tag = styled(Link)`
 `
 const TagArea = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `
 const Article = styled.article`
   border-bottom: 1px dashed #ccc;
