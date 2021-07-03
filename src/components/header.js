@@ -14,14 +14,21 @@ const LogoWrapper = styled.h3`
 const Logo = styled(Link)`
   box-shadow: none;
   text-decoration: none;
-  color: inherit;
+  color: #52528C;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 `
 const Code = styled.div`
   font-family: 'Monaco, sans-serif';
   font-size: 28px;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `
 const Title = styled.div`
   margin-top: 4px;
@@ -29,6 +36,11 @@ const Title = styled.div`
 const Menu = styled.div`
   margin: auto 0 auto auto;
 `
+const MenuItem = styled(Link)`
+  color: #02aab0;
+`
+
+
 
 const Header = () => {
 
@@ -46,7 +58,7 @@ const Header = () => {
         </Logo>
       </LogoWrapper>
       <Menu>
-        <Link to="/about">About Us</Link>
+        <MenuItem to="/about">About Us</MenuItem>
       </Menu>
     </Container>
   )

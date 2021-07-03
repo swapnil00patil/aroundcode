@@ -6,27 +6,13 @@ import kebabCase from "lodash/kebabCase"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import { Author } from "../components/commonStyled"
+import Tags from "../components/Tags"
 
-const Tag = styled(Link)`
-  font-size: 14px;
-  margin: 10px 10px 0 0;
-  padding: 0 8px;
-  border-radius: 5px;
-  border: 1px solid rgb(0, 122, 204);
-  box-shadow: none;
-`
-const TagArea = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`
 const Article = styled.article`
   border-bottom: 1px dashed #ccc;
   padding: ${rhythm(1)} 0;
   margin: 0;
-`
-const Author = styled(Link)`
-  margin-left: 10px;
-  font-size: 80%;
 `
 
 
@@ -59,11 +45,7 @@ const BlogIndex = ({ data, location }) => {
                 }}
               />
             </section>
-            <TagArea>
-              { node.frontmatter.tags.map((tag) => <Tag to={`/tags/${kebabCase(tag)}/`}>{tag}</Tag>) }
-            </TagArea>
-            
-            
+            <Tags tags={node.frontmatter.tags} />
           </Article>
         )
       })}

@@ -15,6 +15,9 @@ const ProfilePic = styled.img`
   margin-right: 20px;
   align-self: center;
   margin-bottom: auto;
+  @media (max-width: 768px) {
+    width: 70px;
+  }
 `
 const Container = styled.div`
   display: flex;    
@@ -34,13 +37,17 @@ const SocialText = styled.a`
   text-decoration: none;
   box-shadow: none; 
   border-radius: 5px;
-  border: 1px solid rgb(0, 122, 204);
+  border: 1px solid #02aab0;
   padding: 0 8px;
-  margin-right: 10px;
+  margin: 10px 10px 0 0;
   font-size: 14px;
+  color: #02aab0;
+  @media (max-width: 768px) {
+    padding: 0 5px;
+  }
 `
 const Description = styled.p`
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 `
 const SocialIcon = styled.img`
   width: 25px;

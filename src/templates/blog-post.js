@@ -5,12 +5,19 @@ import styled from "styled-components"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
-import { MainTitle } from "../components/commonStyled"
+import { rhythm } from "../utils/typography"
+import { MainTitle, Author } from "../components/commonStyled"
 import kebabCase from "lodash/kebabCase"
+import Tags from "../components/Tags"
 
 export const Section = styled.section`
   margin: 1rem 0 1rem 0;
+`
+export const Nav = styled.nav`
+  margin-top: 20px;
+`
+export const TagsArea = styled(Tags)`
+  margin-bottom: 20px;
 `
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -29,11 +36,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {post.frontmatter.title}
           </MainTitle>
           <small>{post.frontmatter.date}</small>
-          <small style={{marginLeft: '10px'}}>
-            <Link to={`/author/${kebabCase(post.frontmatter.author)}/`}>{post.frontmatter.author}</Link>
-          </small>
+          <Author to={`/author/${kebabCase(post.frontmatter.author)}/`}>{post.frontmatter.author}</Author>
         </header>
         <Section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <TagsArea tags={post.frontmatter.tags} />
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -44,7 +50,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </footer>
       </article>
 
-      <nav>
+      <Nav>
         <ul
           style={{
             display: `flex`,
@@ -69,7 +75,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             )}
           </li>
         </ul>
-      </nav>
+      </Nav>
     </Layout>
   )
 }

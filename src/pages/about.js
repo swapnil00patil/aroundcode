@@ -20,9 +20,10 @@ const BioWrap = styled.div`
   width: calc(50% - 24px);
   @media (max-width: 768px) {
     width: 100%;
-    margin: 24px 0 0 0;
+    margin: 24px 0;
   }
 `
+
 
 const AboutPage = ({
   data: {
