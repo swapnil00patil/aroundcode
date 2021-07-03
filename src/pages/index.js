@@ -8,11 +8,12 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
 const Tag = styled(Link)`
+  font-size: 14px;
   margin-right: 20px;
-  background: #007acc;
-  color: #fff;
-  padding: 2px 8px;
+  padding: 0 8px;
   border-radius: 5px;
+  border: 1px solid rgb(0, 122, 204);
+  box-shadow: none;
 `
 const TagArea = styled.div`
   display: flex;
