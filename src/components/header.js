@@ -38,9 +38,14 @@ const Menu = styled.div`
 `
 const MenuItem = styled(Link)`
   color: #02aab0;
+  margin-right: 16px;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `
-
-
+const LastMenuItem = styled(MenuItem)`
+  margin-right: 0;
+`
 
 const Header = () => {
 
@@ -59,6 +64,7 @@ const Header = () => {
       </LogoWrapper>
       <Menu>
         <MenuItem to="/about">About Us</MenuItem>
+        <LastMenuItem target="_blank" to="/rss.xml">RSS</LastMenuItem>
       </Menu>
     </Container>
   )
