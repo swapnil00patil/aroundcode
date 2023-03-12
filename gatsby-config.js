@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `AroundCode`,
     siteUrl: `http://aroundcode.io`,
-    description: "Blog by Swapnil and Kiran about their technical Journey",
+    description: "Blog about technical Journey",
     authors: {
       swapnil: {
         author: `Swapnil Patil`,

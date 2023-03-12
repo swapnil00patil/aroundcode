@@ -92,6 +92,9 @@ const Bio = ({ authorKey }) => {
       }
     }
   `)
+  if (!data.site.siteMetadata.authors[authorKey]) {
+    return
+  }
   const { author, description, social } =
     data.site.siteMetadata.authors[authorKey]
   return (

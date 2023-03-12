@@ -1,7 +1,7 @@
 {
-  "name": "AroundCode",
+  "name": "aroundcode",
   "private": true,
-  "description": "Blog by Swapnil and Kiran about their technical Journey",
+  "description": "Blog about technical Journey",
   "version": "0.1.0",
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.7",
