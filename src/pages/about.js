@@ -7,7 +7,6 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Bio from "../components/bio"
-import { rhythm } from "../utils/typography"
 
 const Container = styled.div`
   display: flex;
@@ -24,7 +23,6 @@ const BioWrap = styled.div`
   }
 `
 
-
 const AboutPage = ({
   data: {
     site: {
@@ -37,10 +35,10 @@ const AboutPage = ({
     <Helmet title={title} />
     <Container>
       <BioWrap>
-        <Bio authorKey='swapnil' />
+        <Bio authorKey="swapnil" />
       </BioWrap>
       <BioWrap>
-        <Bio authorKey='kiran' />
+        <Bio authorKey="gayatri" />
       </BioWrap>
     </Container>
   </Layout>

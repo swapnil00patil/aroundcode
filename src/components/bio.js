@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import styled from "styled-components"
 
 import swapnil from "../../content/assets/swapnil.png"
-import kiran from "../../content/assets/kiran.png"
+import gayatri from "../../content/assets/gayatri.png"
 import linkedin from "../../content/assets/linkedin.png"
 import github from "../../content/assets/github.png"
 import website from "../../content/assets/website.png"
@@ -20,14 +20,10 @@ const ProfilePic = styled.img`
   }
 `
 const Container = styled.div`
-  display: flex;    
+  display: flex;
 `
-const Right = styled.div`
-    
-`
-const Name = styled(Link)`
-    
-`
+const Right = styled.div``
+const Name = styled(Link)``
 const SocialLink = styled.a`
   text-decoration: none;
   box-shadow: none;
@@ -35,7 +31,7 @@ const SocialLink = styled.a`
 `
 const SocialText = styled.a`
   text-decoration: none;
-  box-shadow: none; 
+  box-shadow: none;
   border-radius: 5px;
   border: 1px solid #02aab0;
   padding: 0 8px;
@@ -83,7 +79,7 @@ const Bio = ({ authorKey }) => {
                 resume
               }
             }
-            kiran {
+            gayatri {
               author
               description
               social {
@@ -96,42 +92,37 @@ const Bio = ({ authorKey }) => {
       }
     }
   `)
-  const { author, description, social } = data.site.siteMetadata.authors[authorKey]
+  const { author, description, social } =
+    data.site.siteMetadata.authors[authorKey]
   return (
     <Container>
-      <ProfilePic
-        src={authorKey === 'swapnil' ? swapnil : kiran}
-      />
+      <ProfilePic src={authorKey === "swapnil" ? swapnil : gayatri} />
       <Right>
         <NameSection>
           <Name to={`/author/${kebabCase(author)}/`}>{author}</Name>
-          { 
-              social?.linkedin && 
-              <SocialLink target="_blank" href={social.linkedin}>
-                <SocialIcon src={linkedin} />
-              </SocialLink> 
-            }
-            { 
-              social?.github && 
-              <SocialLink target="_blank" href={social.github}>
-                <SocialIcon src={github} />
-              </SocialLink> 
-            }
+          {social?.linkedin && (
+            <SocialLink target="_blank" href={social.linkedin}>
+              <SocialIcon src={linkedin} />
+            </SocialLink>
+          )}
+          {social?.github && (
+            <SocialLink target="_blank" href={social.github}>
+              <SocialIcon src={github} />
+            </SocialLink>
+          )}
         </NameSection>
         <Description>{description}</Description>
         <LinkArea>
-          { 
-            social?.website && 
+          {social?.website && (
             <SocialText target="_blank" href={social.website}>
               Website
-            </SocialText> 
-          }
-          { 
-            social?.resume && 
+            </SocialText>
+          )}
+          {social?.resume && (
             <SocialText target="_blank" href={social.resume}>
               Resume
-            </SocialText> 
-          }
+            </SocialText>
+          )}
         </LinkArea>
       </Right>
     </Container>

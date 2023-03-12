@@ -2,27 +2,35 @@ module.exports = {
   siteMetadata: {
     title: `AroundCode`,
     siteUrl: `http://aroundcode.io`,
-    description: 'Blog by Swapnil and Kiran about their technical Journey',
+    description: "Blog by Swapnil and Kiran about their technical Journey",
     authors: {
       swapnil: {
         author: `Swapnil Patil`,
-        description: `I work as a Software Engineer in Singapore. 12 years of Experience in Enterprise Web and Hybrid Mobile Applications. I am a techie and I love making cool products.`,
+        description: `I work as a Software Engineer in Microsoft. I have Experience in Enterprise Web and Hybrid Mobile Applications. I am a techie and I love making cool products.`,
         social: {
           linkedin: `https://www.linkedin.com/in/swapnil00patil/`,
           github: `https://github.com/swapnil00patil`,
           website: `https://swapnilpatil.dev`,
-          resume: `https://swapnilpatil.dev/resume.pdf`
-        }
+          resume: `https://swapnilpatil.dev/resume.pdf`,
+        },
       },
-      kiran: {
-        author: `Kiran Aghor`,
-        description: ``,
+      gayatri: {
+        author: `Gayatri Patil`,
+        description: `I work as a Software Engineer in Vancouver. I am interested in learning the Web technologies and solving complex enginnering problems.`,
         social: {
-          linkedin: `https://www.linkedin.com/in/kiranaghor/`,
-          github: `https://github.com/kiran-aghor`,
-        }
-      }
-    }
+          linkedin: `https://www.linkedin.com/in/gayatri-p-520096260/`,
+          github: `https://github.com/gayubhole2012`,
+        },
+      },
+      // kiran: {
+      //   author: `Kiran Aghor`,
+      //   description: ``,
+      //   social: {
+      //     linkedin: `https://www.linkedin.com/in/kiranaghor/`,
+      //     github: `https://github.com/kiran-aghor`,
+      //   },
+      // },
+    },
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -38,7 +46,7 @@ module.exports = {
       options: {
         path: `${__dirname}/content/blog-draft`,
         name: `blog`,
-        isDevelopment: true
+        isDevelopment: true,
       },
     },
     {
@@ -91,7 +99,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
@@ -151,20 +159,23 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingIds: [
-          process.env.GTAG_ID
-        ]
+        trackingIds: [process.env.GTAG_ID],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ].filter((i) => {
-    if(process.env.NODE_ENV === 'development' && i && i.options && i.options.isDevelopment) {
+    if (
+      process.env.NODE_ENV === "development" &&
+      i &&
+      i.options &&
+      i.options.isDevelopment
+    ) {
       return true
-    } else if(i && i.options && i.options.isDevelopment) {
+    } else if (i && i.options && i.options.isDevelopment) {
       return false
     }
     return true
-  })
+  }),
 }
